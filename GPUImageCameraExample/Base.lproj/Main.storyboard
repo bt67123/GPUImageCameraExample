@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fuc-Zb-wuR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4c-HW-KzD" customClass="GPUImageView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C4c-HW-KzD" secondAttribute="height" multiplier="1:1" id="lMK-P8-dnS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQL-C4-fWP">
+                                <rect key="frame" x="135" y="419" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EBT-Jo-Yz3"/>
+                                    <constraint firstAttribute="height" constant="50" id="h8N-6H-MQj"/>
+                                </constraints>
+                                <state key="normal" title="录制"/>
+                                <state key="selected" title="停止"/>
+                                <connections>
+                                    <action selector="onCaptureButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cY4-xV-b5f"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b0-nr-sFq">
+                                <rect key="frame" x="135" y="501" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="CVo-Wm-qZN"/>
+                                    <constraint firstAttribute="height" constant="50" id="Gcq-nj-0KS"/>
+                                </constraints>
+                                <state key="normal" title="查看"/>
+                                <connections>
+                                    <segue destination="oQ8-EX-03k" kind="push" id="AJD-S4-FbO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C4c-HW-KzD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="0jo-sr-XE7"/>
+                            <constraint firstItem="sQL-C4-fWP" firstAttribute="top" secondItem="C4c-HW-KzD" secondAttribute="bottom" constant="35" id="185-AE-ufI"/>
+                            <constraint firstItem="C4c-HW-KzD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="E9O-I3-52i"/>
+                            <constraint firstItem="9b0-nr-sFq" firstAttribute="top" secondItem="sQL-C4-fWP" secondAttribute="bottom" constant="32" id="SXr-P6-VzU"/>
+                            <constraint firstItem="9b0-nr-sFq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XmD-40-Tbj"/>
+                            <constraint firstAttribute="trailing" secondItem="C4c-HW-KzD" secondAttribute="trailing" id="gGJ-H4-Ss9"/>
+                            <constraint firstItem="sQL-C4-fWP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wPQ-lq-yXz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cwk-ik-YLO"/>
+                    <connections>
+                        <outlet property="cameraView" destination="C4c-HW-KzD" id="UeM-vz-GvQ"/>
+                        <outlet property="captureButton" destination="sQL-C4-fWP" id="Efv-14-fNY"/>
+                        <outlet property="lookButton" destination="9b0-nr-sFq" id="sbt-O1-MCX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="312"/>
+        </scene>
+        <!--Show Video View Controller-->
+        <scene sceneID="Hz5-Q8-z6W">
+            <objects>
+                <viewController id="oQ8-EX-03k" customClass="ShowVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TcY-hW-hVE"/>
+                        <viewControllerLayoutGuide type="bottom" id="wsK-Lb-Q1d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tNk-xZ-cF3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5O-JF-Jqx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="320"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b5O-JF-Jqx" secondAttribute="height" multiplier="1:1" id="l5Z-6J-01z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b5O-JF-Jqx" firstAttribute="leading" secondItem="tNk-xZ-cF3" secondAttribute="leading" id="HRF-tJ-ojt"/>
+                            <constraint firstAttribute="trailing" secondItem="b5O-JF-Jqx" secondAttribute="trailing" id="Yfd-Hu-Glz"/>
+                            <constraint firstItem="b5O-JF-Jqx" firstAttribute="top" secondItem="TcY-hW-hVE" secondAttribute="bottom" id="dfz-kn-2wW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="udA-3D-TT4"/>
+                    <connections>
+                        <outlet property="playView" destination="b5O-JF-Jqx" id="MSL-0d-Q7M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAR-7M-zTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="310"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JNw-mW-l2h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fuc-Zb-wuR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7BM-xq-f18">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="G1j-8l-dxD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbH-TM-awu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="312"/>
+        </scene>
+    </scenes>
+</document>
